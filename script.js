@@ -1,10 +1,13 @@
 let choices = ['Rock', 'Paper', 'Scissors'];
 
+
 function getComputerChoice (){
     i = Math.floor(Math.random()*choices.length);
-    return choices[i]
-
+    let computerSelection = choices[i]
+    return computerSelection;
 }
+let comSelect = getComputerChoice()
+let computerSelection = comSelect.toLowerCase()
 
 //console.log(getComputerChoice())
 let losePbR = 'You Lose! Paper beats Rock'
@@ -14,7 +17,7 @@ let winSbP = 'You win! Scissors beat Paper'
 let loseRbS = 'You Lose! Rock beats Scissors'
 let winRbS = 'You Win! Rock beats Scissors'
 
-function game(playerSelection, computerSelection){
+function playRound(playerSelection, computerSelection){
     if ((playerSelection === 'rock') && (computerSelection === 'paper')){
         return losePbR;
     }else if((playerSelection === 'paper') && (computerSelection === 'rock')){
@@ -29,3 +32,8 @@ function game(playerSelection, computerSelection){
         return winRbS;
     }else { return "it's a tie"}
 }
+
+let playerSelection = prompt('enter Rock, Paper or Scissors: ', '').toLowerCase();
+
+console.log(playRound(playerSelection, computerSelection))
+console.log(`Computer selects ${comSelect}`)
