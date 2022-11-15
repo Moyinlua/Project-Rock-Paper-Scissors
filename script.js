@@ -3,11 +3,11 @@ let choices = ['Rock', 'Paper', 'Scissors'];
 
 function getComputerChoice (){
     i = Math.floor(Math.random()*choices.length);
-    let computerSelection = choices[i]
-    return computerSelection;
+    let computerSelection = choices[i];
+    return computerSelection.toLowerCase();
 }
-let comSelect = getComputerChoice()
-let computerSelection = comSelect.toLowerCase()
+//let comSelect = getComputerChoice()
+//let computerSelection = comSelect.toLowerCase()
 
 //console.log(getComputerChoice())
 let losePbR = 'You Lose! Paper beats Rock'
@@ -33,7 +33,22 @@ function playRound(playerSelection, computerSelection){
     }else { return "it's a tie"}
 }
 
-let playerSelection = prompt('enter Rock, Paper or Scissors: ', '').toLowerCase();
 
-console.log(playRound(playerSelection, computerSelection))
-console.log(`Computer selects ${comSelect}`)
+
+//console.log(playRound(playerSelection, computerSelection))
+//console.log(`Computer selects ${comSelect}`)
+
+function game(){
+    let count = [];
+    for (let i = 0; i < 5; i++) {
+        let playerSelection = prompt('enter Rock, Paper or Scissors: ', '').toLowerCase();
+        let computerSelection;
+        computerSelection
+        count[i] = playRound(playerSelection,getComputerChoice());
+        
+        
+    }
+    console.log(count);
+}
+
+console.log(fiveRoundGame = game())
