@@ -48,7 +48,33 @@ function game(){
         
         
     }
-    console.log(count);
+    return count;
 }
 
 console.log(fiveRoundGame = game())
+
+
+function scoreBoard(){
+    let scoreBoard = [];
+    for (let i = 0; i < fiveRoundGame.length; i++){
+        if ((fiveRoundGame[i] === losePbR) || (fiveRoundGame[i] === loseRbS) || (fiveRoundGame[i] === loseSbP)) { 
+            scoreBoard[i] = 'lose';
+        } else if ((fiveRoundGame[i] === winPbR) || (fiveRoundGame[i] === winRbS) || (fiveRoundGame[i] === winSbP)) {
+            scoreBoard[i] = 'win';
+        } else {scoreBoard[i] = 'tie';}                   
+    }
+    
+    return scoreBoard;
+}
+
+console.log(scoreBoard());
+
+let winCount = scoreBoard().filter(x => x=='win').length
+let loseCount = scoreBoard().filter(x => x=='lose').length
+
+if (winCount > loseCount){
+    console.log('Victory');
+}else if (winCount < loseCount){
+    console.log('Better luck next time');
+}else console.log('A Tie');
+
